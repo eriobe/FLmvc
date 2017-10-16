@@ -16,16 +16,10 @@ namespace FLmvc.Data
         };
 
 
-        public Person GetPerson()
+        public Person GetPersonById(int id)
         {
-            Person p = new Person()
-            {
-                Firstname = "Erik",
-                Lastname = "Öberg",
-                Age = 42,
-                Id = 1
-            };
-            return p;
+            var result = persons.FirstOrDefault(p => p.Id == id);
+            return result;
         }
 
         public List<Person> GetPersons()

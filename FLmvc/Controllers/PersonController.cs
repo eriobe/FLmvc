@@ -1,4 +1,5 @@
 ﻿using FLmvc.Data;
+using FLmvc.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,10 +18,18 @@ namespace FLmvc.Controllers
             return View(model);
         }
 
-        public ActionResult ShowPerson()
+        public ActionResult ShowPerson(int id=1)
+        {
+            var model = po.GetPersonById(id);
+            return View(model);
+        }
+
+        [HttpPost]
+        public ActionResult ShowPerson(Person model)
         {
             return View();
         }
-       
+
+
     }
 }

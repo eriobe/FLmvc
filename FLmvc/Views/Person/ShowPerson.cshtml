@@ -11,8 +11,18 @@
     <title>ShowPerson</title>
 </head>
 <body>
-    <div> Visa personer
-    @Model.Firstname
+    <div> 
+        @using (Html.BeginForm())
+        {
+            @Html.LabelFor(x => x.Firstname, "Förnamn")
+            @Html.TextBoxFor(x => x.Firstname)
+
+            @Html.LabelFor(x => x.Lastname , "Eternamn")
+            @Html.TextBoxFor(x => x.Lastname)
+
+            @Html.HiddenFor(x => x.Id)
+            <button type="submit">Spara</button>
+        }
     </div>
 </body>
 </html>

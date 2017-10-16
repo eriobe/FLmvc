@@ -9,8 +9,13 @@ namespace FLmvc.Data
     public class PersonOperations
     {
 
-        private List<Person> persons = new List<Person>();
-        
+        private List<Person> persons = new List<Person>
+        {
+            new Person {Id=1, Firstname= "Erik", Lastname="Öberg", Age=42 },
+            new Person {Id=2, Firstname= "Mary", Lastname="Jenkins", Age=12 },
+        };
+
+
         public Person GetPerson()
         {
             Person p = new Person()
@@ -25,23 +30,8 @@ namespace FLmvc.Data
 
         public List<Person> GetPersons()
         {
-            Person p = new Person()
-            {
-                Firstname = "Erik",
-                Lastname = "Öberg",
-                Age = 42,
-                Id = 1
-            };
-            persons.Add(p);
-            p = new Person()
-            {
-                Firstname = "Erasdfik",
-                Lastname = "asdf",
-                Age = 42,
-                Id = 2
-            };
-            persons.Add(p);
             return persons;
         }
+
     }
 }

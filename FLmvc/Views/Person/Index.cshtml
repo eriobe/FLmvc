@@ -15,6 +15,7 @@
        @foreach (var p in Model)
        {
            <div>@p.Firstname</div>
+           <div>@Html.ActionLink("visa en annan sida","ShowPerson", "Person", new { id = p.Id },null)</div>
        }
     </div>
 </body>
